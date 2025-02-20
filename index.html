@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-02-20 Thu 17:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Missouri Maize Computation and Vision Laboratory</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dewi Kharismawati, Chimdi Walter Ndubuisi, Alondra Conchas-Sanchez, Evie Wilbur, Christian Fluharty, Carlos Vences, Nate Martin, Rushil Namjoshi, and Toni Kazic" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Missouri Maize Computation and Vision Laboratory</h1>
+<p width="600" height="455" alt="2024 field season">
+# <img src="./images/us_fall2024_cropped_resized.JPG" alt="2024 field season" width="600" height="455" />
+<img src="./us_fall2024_cropped_resized.JPG" alt="us_fall2024_cropped_resized.JPG" />
+</p>
+
+
+
+
+<div id="outline-container-org5b91318" class="outline-2">
+<h2 id="org5b91318">Why Compute Maize?</h2>
+<div class="outline-text-2" id="text-org5b91318">
+<p>
+<b>We develop computational methods to understand how biological networks produce complex phenotypes.</b> A <i>phenotype</i> is an observable characteristic of an organism.  Some phenotypes, such as hair color or height, can be observed by eye; others, such as blood type, require laboratory analysis.  A <i>complex phenotype</i> is formed by multiple genes interacting nonlinearly together and with the organism's environment and human management practices. A prime example is the climate resilience of crop plants.  Deconvolving these interactions into better models is a fundamental challenge and requires both more accurate data over many individuals and better approaches to modeling.
+</p>
+
+
+
+
+<p>
+<b>We represent phenotypes as points in a high-dimensional space</b> (mathematically, a <i>manifold</i>).  Each dimension captures a portion of the physiological network that produces the phenotype and its underlying processes can be modelled mathematically.  Our biological model is the disease <i>lesion mimic mutants of maize</i>, which produce tens to thousands of discrete lesions (spots) on leaf surfaces that vary in size, shape, morphology, developmental trajectory, and response to the environment that we quantitate by computer vision.  Phenotypes that share combinations of similar dimensional values indicate related causal mechanisms in the biological network.
+</p>
+
+
+
+<p>
+<b>Formulating phenotypes as high-dimensional manifolds lets us ask several biological questions in a consistent way.</b>
+</p>
+
+<ul class="org-ul">
+<li><i>Where are the known phenotypes on the manifold and which phenotypes are similar in which ways?</i> The answers here would help characterize the empirical properties of the manifold, the ranges of posssible phenotypes, and which phenotypes share causal components in the biological network.</li>
+
+<li><i>Can one use the manifolds to predict the responses of genotypes to novel environments?</i> The answers here could help geneticists breed for more challenging environments and farmers to respond more precisely to environmental stresses.</li>
+
+<li><i>Can one navigate the manifold more efficiently to produce novel phenotypes?</i> The answers here could offer an alternative strategy for breeding better, more resilient crops.</li>
+</ul>
+
+
+
+<p>
+<b>Understanding complex phenotypes takes a lot of quantitative data!</b> To scale up our field experiments for better sample size and more robust quantitation, we are developing many computer vision techniques for agriculture using our maize research crop.  Flying is fast and nondestructive, so we can image tens of thousands of leaves in an afternoon, and repeatedly imaging lesions as they develop provides crucial kinetic data for models.  We freely fly simple consumer-grade drones with visible light (RGB) cameras to capture video.
+</p>
+
+
+<p>
+<b>Our methods involve a mix of classical algorithms and deep learning,</b> from mosaicking the videos to counting seedlings to building 3D models of plants to segmenting leaves and lesions from the imagery to manifold mapping.  Below we highlight current and past work &#x2014; for more details, follow the links!
+</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="outline-container-orgb12b0b3" class="outline-2">
+<h2 id="orgb12b0b3">Our Work</h2>
+<div class="outline-text-2" id="text-orgb12b0b3">
+<p>
+Our work cycles between the field for growing maize and the lab for computation.  
+</p>
+</div>
+
+<div id="outline-container-org593dfe4" class="outline-3">
+<h3 id="org593dfe4">Computation</h3>
+<div class="outline-text-3" id="text-org593dfe4">
+</div>
+<div id="outline-container-org58cee0c" class="outline-4">
+<h4 id="org58cee0c"><a href="https://dek8v5.github.io/">Dewi Endah Kharismawati</a></h4>
+<div class="outline-text-4" id="text-org58cee0c">
+<p>
+<a id="org133c216"></a>
+</p>
+
+<p>
+Dewi is a very dedicated fifth-year Ph.D. student in Computer Science. Her
+research primarily focuses on digital phenotyping, leveraging consumer
+grade UAVsystems to make advanced agricultural
+technologies more accessible.  She is an experienced UAV pilot with part 107
+license and has over 200 hours of flying experience. Dewi has developed
+sophisticated algorithms for 3D reconstruction, image registration, object
+detection, and object segmentation. Her projects include:
+</p>
+<ul class="org-ul">
+<li><a href="https://dek8v5.github.io/CorNet/">cornet v1</a>: An unsupervised deep learning based homography estimator
+for a faster and improved mosaicking without metadata. <i>CorNet</i> is
+ten times faster than <i>ASIFT</i> while maintaining comparable accuracy.
+The current version is <i>CorNetv3</i>, trained on a more
+diverse and balanced dataset.</li>
+<li><a href="https://dek8v5.github.io/MaiZaic/">MaiZaic</a>: An improved and more robust end-to-end mosaicking pipeline
+that incorporates dynamic sampling with pixel optical flow, automatic
+lens and gimbal calibration, the enhanced <i>Cornetv3</i>, shot detection based on UAV movements,
+and mini-mosaicking to reduce error accumulation. <i>MaiZaic</i> achieves
+Average Percentage Error (APE) of 11% lower than <i>ASIFT</i>.</li>
+<li><a href="https://dek8v5.github.io/DMC-DeepMaizeCounter/">Deep Maize Counter</a> (DMC): an automated seedling maize stand counting
+pipeline using YOLOv9 for nursery field. DMC has two modes: (1)
+counting from mosaics that provides the whole view of the field or (2)
+counting from raw images utilizing homography matrices to stitch both
+detection and raw into mosaics. The mosaics mode achieved r<sup>2</sup> of 0.616,
+while the raw frames mode achieved 0.906.</li>
+<li>Pointillist Maize: 3D maize reconstructions from 360° aerial videos
+using Structure from Motion (SfM), Neural Radiance Fields (NeRF), and
+Gaussian Splatting.  Comparative analysis demonstrated that NeRF
+produces 90.4% of points and computes 7.3 times faster than SfM, while
+Gaussian Splatting produces 8.1% of points and operates 3.0 times
+faster than SfM.</li>
+<li>Maize Seedling Detection Dataset: A dataset containing aerial images
+of seedling maize across different growth stages, soil colors, and
+camera views. To ensure accurate counting, the dataset is categorized
+into three classes: one plant, two plants, and three plants. The two-
+and three-plant groups were intentionally planted together.</li>
+<li>Maize 3D Model Dataset: A dataset featuring aerial video orbital
+trajectories at various camera angles and views, including single plants,
+rows, and entire fields. Single plants were grown in a tiling field, with
+each plant spaced 15 feet apart to enable very low-altitude orbits.
+<a href="#org995b814">Evie and Chris</a> are computing the 3D models of these plants.</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgbc369a0" class="outline-4">
+<h4 id="orgbc369a0"><a href="https://github.com/ChimdiWalter/chimdi_pages/blob/main/index.md">Chimdi Walter Ndubuisi</a></h4>
+<div class="outline-text-4" id="text-orgbc369a0">
+<p>
+<a id="org3ecf2e7"></a>
+</p>
+
+<p>
+Chimdi is a third year PhD student majoring in Electrical and Computer
+Engineering. His research focuses on computer vision and image processing.
+His work integrates deep learning, image processing, mathematical topology
+and computer vision to develop solutions and address challenges in plant
+phenotyping.  Ultimately he works on mapping high-dimensional tensors of
+maize lesion phenotypes &#x2014; biological attributes of leaf spots &#x2014; onto
+manifolds that are only locally metric and using those maps to predict the
+structure of the underlying physiological network and faster routes for
+crop improvement.  His projects include:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://github.com/ChimdiWalter/chimdi_pages/blob/main/index.md">Pre-Processing Pipeline and Color Correction Algorithm</a>: Pre-processing
+pipeline and color correction algorithm for the <i>ex situ</i> imaging</li>
+
+<li><a href="https://github.com/ChimdiWalter/chimdi_pages/blob/main/index.md">Wavelet Application and Snake Algorithm</a>: Application of  discrete and
+continuous wavelet transforms on 
+color corrected 16-bit images with the application of a Navier-Stokes algorithm.</li>
+</ul>
+
+
+
+<p>
+Our current phenotyping method relies on still images of single leaves from
+field-grown plants: an experienced team can image about 100 leaves/day.  We
+previously developed a <a href="#org2b1b13e">cascade of MATLAB algorithms to segment lesions</a> from
+healthy tissue on leaves, and other code that quantitates
+lesion phenotypes.  The cascade performs well on many phenotypes, but is
+less accurate on phenotypes that have many tiny lesions crowded together.
+We are now working on an improved pipeline to segment lesions from all the
+phenotypes.  This more diverse collection of phenotypes will let us
+populate the manifold and recognize similar phenotypes, forming the model's
+blocks.
+</p>
+
+
+<p>
+<a id="org863bc45"></a>
+Our goal is to develop 3D models of maize
+plants, segment the leaves from each plant, and use each plant's leaves as
+input to our <a href="#org863bc45">improved lesion segmentation pipeline</a>.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgcb2503b" class="outline-4">
+<h4 id="orgcb2503b">Evie Wilbur and Christian Fluharty</h4>
+<div class="outline-text-4" id="text-orgcb2503b">
+<p>
+<a id="org995b814"></a>
+</p>
+
+<p>
+We are looking to improve the efficiency of identifying lesions on maize
+plants from videos taken by drones by segmenting leaves. Segmenting leaves,
+or seperating the leaves out as individuals from a plant, can be achieved
+using modern computer vision advancements. By taking video from drones as
+input, we hope to output a result that clearly and accurately segments the
+leaves from the plant to be used as input to a model that will then segment
+the lesions on the leaves. Currently we are leveraging tools like Nautilus
+to automate extracting three-dimensional data in the form of point clouds,
+and using COLMAP for reconstruction. We wll then use these data to train
+and experiment with various computer vision models to optimize precise and
+accurate leaf segmentation. 
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgb223a3e" class="outline-4">
+<h4 id="orgb223a3e">Rushil Namjoshi</h4>
+<div class="outline-text-4" id="text-orgb223a3e">
+<p>
+<a id="orga8836a4"></a>
+</p>
+
+<p>
+I'm working on segmenting plants from rows imaged by the drone using both
+2D and 3D methods.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org480f2d7" class="outline-4">
+<h4 id="org480f2d7">RamaNarayana Vemali</h4>
+<div class="outline-text-4" id="text-org480f2d7">
+<p>
+<a id="orgdf18a2c"></a>
+</p>
+
+<p>
+An important challenge is to track leaves as they develop, since new leaves
+appear at the top of the growing plant while older, juvenile leaves die at
+its bottom.  Viewed from above, the angle a leaf subtends with the <i>culm</i>
+(the plant's 'stem') is determined very early in development and does not
+change.  This provides a time-invariant signature for each leaf.  My
+current work is developing algorithms to detect these angles as the crop
+grows.
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgfb4c9dd" class="outline-3">
+<h3 id="orgfb4c9dd">Robotics</h3>
+<div class="outline-text-3" id="text-orgfb4c9dd">
+</div>
+<div id="outline-container-org1cc8811" class="outline-4">
+<h4 id="org1cc8811">Alondra Conchas-Sanchez</h4>
+<div class="outline-text-4" id="text-org1cc8811">
+<p>
+<a id="orgcd283e4"></a>
+</p>
+
+<p>
+My research focuses on the development of a robotic planter designed to
+improve the efficiency of planting genetically modified corn seed.
+Currently, the planting process is done by hand, requiring hours of labor
+in high temperatures, often exceeding 90° F.  This not only makes
+the task physically demanding but also time-consuming.  The robotic planter
+we are developing will streamline this process by automating the planting
+of all varieties of corn seeds used by our lab with the flexibility to
+accommodate future varieties.  In addition to planting, the system will be
+capable of digging and closing holes, significantly reducing manual labor.
+A key future objective is to make the robotic planter fully autonomous,
+enabling it to handle large quantities of seed with minimal human
+intervention.  To ensure optimal performance, ongoing experiments such as
+the angle of repose test are being conducted to determine how the angle of
+seed distribution impacts planting efficiency.  We are also working to
+modify an existing planter designed by a previous capstone group, improving
+its maneuverability in field conditions to better suit our needs.
+</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="outline-container-org4febf14" class="outline-4">
+<h4 id="org4febf14">Carlos Vences</h4>
+<div class="outline-text-4" id="text-org4febf14">
+<p>
+<a id="org083f07c"></a>
+</p>
+
+<p>
+I'm currently a freshman studying electrical engineering.  I'm currently
+working on our drones, keeping them in good repair.  This experience will
+help me integrate vision-driven navigation with the drone hardware.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org5afb952" class="outline-4">
+<h4 id="org5afb952">Nate Martin</h4>
+<div class="outline-text-4" id="text-org5afb952">
+<p>
+<a id="orgb998bd0"></a>
+</p>
+
+<p>
+I'm currently a sophomore studying mechanical engineering. My team and I
+are currently working on building and optimizing a rover that will open the
+furrow, plant the corn seed, and then close the furrow back up. Since
+collecting data is so important for AI, we must make sure to reduce
+variability and increase the rate at which we plant seeds. I hope to use my
+new found-knowdeldge and experiences from this project to further my career
+as a mechanical engineer.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga9b43b9" class="outline-3">
+<h3 id="orga9b43b9"><a href="https://github.com/tonikazic">Toni Kazic</a></h3>
+<div class="outline-text-3" id="text-orga9b43b9">
+<p>
+<a id="orgbeb9f5a"></a>
+</p>
+
+<p>
+Mostly, I'm the cruise director, but I do occasionally write some code.
+</p>
+
+<ul class="org-ul">
+<li>To <b>keep track of all the data, seed, and tissues</b>, I wrote and
+<a href="https://github.com/tonikazic/chloe">maintain</a> <i>Chloe</i>, a crop management system and database in Prolog and
+Perl.  It incorporates a number of practical, labor-saving techniques
+and computations I've found useful in planning, managing, and
+harvesting maize nurseries that also provide extensive phenotyping
+data.  This was written up as a <a href="#org5faf364">BioArXiv preprint</a>.</li>
+
+<li>The <a href="https://github.com/tonikazic/maize_lesion_segmentation">prototype of our lesion segmentation code</a> in MatLab was
+written mainly by Derek Kelly with a little help from Avimanyou Vatsa,
+published in <a href="#org2b1b13e">Mach. Vision Appl.</a></li>
+
+<li>Ann E. Stapleton once asked me what was the minimal network that would
+produce her complex stress phenotypes.  The <a href="https://github.com/tonikazic/univariate_dose_response">resulting code</a> produced the
+model in <a href="#org335a324">Chang</a> <i>et alia</i>.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="outline-container-org6419bc2" class="outline-2">
+<h2 id="org6419bc2">Thanks to Our Collaborators and Funders!</h2>
+<div class="outline-text-2" id="text-org6419bc2">
+<ul class="org-ul">
+<li>Filiz Bunyak Ersoy</li>
+<li>Hadi AliAkbarpour</li>
+<li>Kannappan Palaniappan</li>
+<li>M. Gerald Neuffer</li>
+<li>U.S. National Science Foundation, Dept. of Electrical Engineering and
+Computer Science and the Graduate School of the University of Missouri,
+and an anonymous gift in support of maize research.</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgb7af32a" class="outline-2">
+<h2 id="orgb7af32a">Selected Publications and Talks</h2>
+<div class="outline-text-2" id="text-orgb7af32a">
+<ul class="org-ul">
+<li><a id="orgd2e0db5"></a> Kharismawati, D. E. and T. Kazic (2025). <i>MaiZaic</i>: a robust end-to-end pipeline to mosaic aerial RGB videos of maize field. BioRxiv preprint at <a href="https://www.biorxiv.org/content/10.1101/2024.12.31.630534v1">https://www.biorxiv.org/content/10.1101/2024.12.31.630534v1</a>.</li>
+
+<li><a id="org3c82eff"></a> Ndubuisi, Chimdi Walter, Kharismawati, D. E., and
+T. Kazic (2023). Imaging maize lesions.  Talk at MU Corteva plant
+science symposium,  <a href="https://youtu.be/Tjg_716mRFg">https://youtu.be/Tjg_716mRFg</a></li>
+
+<li><a id="org9e7c73c"></a> Conchas-Sanchez, A., Kharismawati, D. E.,
+Ndubuisi, C. W. and T. Kazic (2024).  <a href="https://github.com/Alondra-CS/Colonel-Corn-v2.git">Improvements and further tests on Colonel Corn</a>.</li>
+
+<li><a id="org7ea7fe0"></a> Conchas-Sanchez, A., Kharismawati, D. E.,
+Ndubuisi, C. W. and T. Kazic (2024). <a href="https://github.com/Alondra-CS/Colonel-Corn-v1/blob/main/AlondraCS%20-%20Research%20Poster%20Spring%202024.pdf">Colonel Corn: Developing a Maize Seed Singulation For Use in a Robotic Planter</a>.</li>
+
+<li><a id="org9c4532c"></a> Kharismawati, D. E., Akbarpour, H. A., Aktar, R.,
+Bunyak, F., Palaniappan, K., and Kazic, T. (2020). <i>CorNet</i>: unsupervised
+deep homography estimation for agricultural aerial imagery. In 16th
+European Conference on Computer Vision 2020 (ECCV2020),
+eds. V. Ferrari, B. Fisher, C. Schmid, and
+E. Trucco. 402–419. <a href="https://doi.org/10.1007/978-3-030-65414-6">doi:10.1007/978-3-030-65414-6</a>.  
+<a href="https://www.youtube.com/watch?v=fl8tw7gP-UE">This is the Youtube video presentation</a>.</li>
+
+<li><a id="org5faf364"></a> Toni Kazic, 2020. <i>Chloe</i>: flexible, efficient data
+provenance and management,  <a href="https://doi.org/10.1101/2020.01.28.923763">doi:10.1101/2020.01.28.923763</a></li>
+
+<li><a id="org2b1b13e"></a> Kelly, D., A. Vatsa, W. Mayham, and T. Kazic, 2016. Extracting
+complex phenotypes from images. <i>Mach. Vision Appl.</i>, <b>27</b>: 145&#x2013;156,
+<a href="https://doi.org/10.1007/s00138-015-0718-6">doi:10.1007/s00138-015-0718-6</a>.</li>
+
+<li><a id="org335a324"></a> Chang, M. M., Nail, D. A., Kazic, T. Simmons, S. J., and
+A. E. Stapleton, 2018. Loci that control nonlinear, interdependent
+responses to combinations of drought and nitrogen limitation. <i>G3:
+Genes, Genomes, Genetics</i> <b>8</b>: 1481&#x2013;1496,
+<a href="https://doi.org/10.1534/g3.118.200123">https://doi.org/10.1534/g3.118.200123</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org9e66710" class="outline-2">
+<h2 id="org9e66710">How to Find Us</h2>
+<div class="outline-text-2" id="text-org9e66710">
+<p>
+We're at the Dept. of Electrical Engineering and Computer Science,
+University of Missouri, Columbia.  You can email Toni at <code>kazict at
+missouri dot edu</code>, though she is often very slow to reply, especially during the
+summer field season.  
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2025-02-20 Thu 00:00</p>
+<p class="author">Author: Dewi Kharismawati, Chimdi Walter Ndubuisi, Alondra Conchas-Sanchez, Evie Wilbur, Christian Fluharty, Carlos Vences, Nate Martin, Rushil Namjoshi, and Toni Kazic</p>
+<p class="date">Created: 2025-02-20 Thu 17:53</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
