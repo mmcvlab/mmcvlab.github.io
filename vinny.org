@@ -1,0 +1,95 @@
+# this is ../b/artistry/papers/current/lab_website/index.org
+
+
+
+
+
+#+title: Vinny, the Best Dog Ever
+#+author: Toni Kazic and Bill Wise
+#+date: <2025-05-09 Fri>
+
+
+# push to mmcvlab github site
+
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
+
+
+#+options: html-link-use-abs-url:nil html-postamble:auto html-preamble:t
+#+options: html-scripts:t html-style:t html5-fancy:nil tex:t
+#+html_doctype: xhtml-strict
+#+html_container: div
+#+description:
+#+keywords:
+#+html_link_home:
+#+html_link_up:
+#+html_mathjax:
+#+html_equation_reference_format: \eqref{%s}
+#+html_head:
+#+html_head_extra:
+#+subtitle:
+#+infojs_opt:
+#+creator: <a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.4.6)
+#+latex_header:
+# <body>
+# <p>
+#   <img src="./images/us_masked.JPG" alt="2021 field season" width="1250" height="833">
+#   <!--
+#  <style>;
+# body {
+#   background-image: url('./images/us_masked.JPG');
+# }
+# </style>; 
+# -->
+# </p>
+
+
+
+
+
+
+# native image ./images/us_fall_cropped.JPG
+#
+# cropped is 2306 × 1748 pixels = 1.319
+#
+# resized is ./images/us_fall2024_cropped_resized.JPG
+
+
+#+ATTR_HTML: :alt vinny at the farm
+#+caption: Vinny at the farm: October, 2024.
+[[file:./images/vinny_photo_album/vinny_cover_dog.png]]
+
+
+
+* Vinny's Walks
+
+#+ATTR_HTML: :alt vinny's walks at capen
+#+ATTR_HTML: :width 600  :height 455
+#+caption: Some of Vinny's walks at Capen Park during his life
+[[file:./images/vinny_photo_album/vinnys_walk.png]]
+  
+
+* Other Photos (and more to come!)
+
+#+ATTR_HTML: :alt vinny in snow
+#+ATTR_HTML: :width 600  :height 800
+#+caption: Contemplation: December 17, 2019
+[[file:./images/vinny_photo_album/vinny_in_snow.jpg]]
+  
+
+#+ATTR_HTML: :alt that tail
+#+ATTR_HTML: :width 600  :height 800
+#+caption: That tail: December 29, 2019
+[[file:./images/vinny_photo_album/that_tail.jpg]]
+  
+
+#+ATTR_HTML: :alt a dust bath at the Missouri
+#+ATTR_HTML: :width 600  :height 455
+#+caption: A dust bath at the Missouri: February 23, 2020
+[[file:./images/vinny_photo_album/river_dust_bath.jpg]]
+  
+#+ATTR_HTML: :alt the prince, enthroned
+#+ATTR_HTML: :width 600  :height 455
+#+caption: The Prince, enthroned: April 22, 2020
+[[file:./images/vinny_photo_album/enthroned_prince.jpg]]
+  
